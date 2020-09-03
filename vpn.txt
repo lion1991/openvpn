@@ -255,11 +255,11 @@ function startInstall() {
 
         # firewall-cmd --permanent --add-port=$PORT/$PROTOCOL > /dev/null 2>&1
 
-        if [ "`firewall-cmd --permanent --query-forward-port=port=31001-32000:proto=tcp:toport=1194`" == "no" ]; then firewall-cmd --permanent --add-forward-port=port=31001-32000:proto=tcp:toport=1194 > /dev/null 2>&1 ;  fi ;
+        #if [ "`firewall-cmd --permanent --query-forward-port=port=31001-32000:proto=tcp:toport=1194`" == "no" ]; then firewall-cmd --permanent --add-forward-port=port=31001-32000:proto=tcp:toport=1194 > /dev/null 2>&1 ;  fi ;
 
-        if [ "`firewall-cmd --permanent --query-masquerade`" == "no" ]; then firewall-cmd --permanent --add-masquerade > /dev/null 2>&1 ;  fi ;
+        #if [ "`firewall-cmd --permanent --query-masquerade`" == "no" ]; then firewall-cmd --permanent --add-masquerade > /dev/null 2>&1 ;  fi ;
 
-        firewall-cmd --reload > /dev/null 2>&1
+        #firewall-cmd --reload > /dev/null 2>&1
 
         echo -n "▋▋";
 
