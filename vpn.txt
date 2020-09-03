@@ -510,6 +510,7 @@ function startMenu () {
         echo "   2) 删除一个用户"
         echo "   3) 删除 OpenVPN"
         echo "   4) 退出"
+	echo "   9) 添加nat转发"
 
         echo ;
 
@@ -555,6 +556,10 @@ function startMenu () {
                 4)
                         exit 0
                 ;;
+		
+		9)
+		iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o eth0 -j MASQUERADE
+		;;
         esac
 }
 
