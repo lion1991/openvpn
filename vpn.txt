@@ -189,7 +189,7 @@ function startInstall() {
                 persist-tun
                 keepalive 10 120
                 topology subnet
-		push "route 10.10.0.0 255.255.128.0"
+		push \"route 10.10.0.0 255.255.128.0\"
                 server 10.10.10.0 255.255.255.0
 		duplicate_cn
                 ifconfig-pool-persist ipp.txt" >> /etc/openvpn/server.conf
@@ -558,7 +558,8 @@ function startMenu () {
                 ;;
 		
 		9)
-		iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o eth0 -j MASQUERADE
+			iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o eth0 -j MASQUERADE
+			exit 0
 		;;
         esac
 }
